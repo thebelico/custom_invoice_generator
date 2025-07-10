@@ -1,0 +1,131 @@
+@font-face {
+    font-family: 'Gill Sans MT';
+    src: url('static/fonts/GillSansMT.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Optima';
+    src: url('static/fonts/Optima.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url('static/fonts/Helvetica.ttf') format('truetype');
+}
+
+body {
+    margin: 0;
+    padding: 30px;
+    color: #000;
+    font-family: 'Helvetica', sans-serif;
+    font-size: 8pt;
+    background-color: white;
+}
+
+#main_container {
+    width: 100%;
+    box-sizing: border-box;
+}
+.header-table {
+    width: 100%;
+    margin-bottom: 20px;
+}
+#logo {
+    max-width: 200px;
+    max-height: 60px;
+    height: auto;
+    align-self: center;
+    padding-left: 50px;
+}
+.invoice-title {
+    font-family: 'Gill Sans MT', sans-serif;
+    font-size: 20pt;
+    color: #3DB5E6;
+    font-weight: bold;
+}
+.double-column-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+.double-column-table td {
+    vertical-align: top;
+    width: 50%;
+    padding-right: 15px;
+}
+
+
+/* Titles (h2 style) */
+.section-title,
+.fullwidth-section h2 {
+    font-family: 'Gill Sans MT', sans-serif;
+    font-size: 10pt;
+    color: #3DB5E6;
+    margin-bottom: 8px;
+    border-bottom: 2px solid #3DB5E6;
+    padding-bottom: 4px;
+}
+
+/* Info tables */
+.info-table,
+.invoice-info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+.info-table td,
+.invoice-info-table td {
+    vertical-align: top;
+    padding: 4px 8px;
+}
+
+/* Field name */
+.field {
+    font-family: 'Optima', sans-serif;
+    font-size: 8pt;
+    color: #002060;
+    white-space: nowrap;
+    width: 120px;
+}
+
+/* Field value */
+.value {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 8pt;
+    color: #000;
+}
+
+/* Invoice Info alignment */
+.invoice-info-table {
+    margin-top: 12px;
+    margin-left: auto;
+    width: 80%;
+}
+
+/* Bank block */
+.fullwidth-section {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.second-item-box {
+    margin-top: 80vh;
+  }
+.page-break {
+page-break-before: always;
+}
+
+
+/* Goodbye message */
+#gb_msg {
+    margin-top: 40px;
+    text-align: center;
+    font-style: italic;
+    font-family: 'Optima', sans-serif;
+    font-size: 9pt;
+    border-top: 1px solid #3DB5E6;
+    padding-top: 20px;
+    color: #444;
+}

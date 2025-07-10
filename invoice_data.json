@@ -1,0 +1,81 @@
+{
+    "invoice_type": "item_desc",
+    
+    "invoice_details": {
+        "invoice_number":"I-202007",
+        "date": "02-07-2020",
+        "invoice_month": "July 2025"
+    },
+    
+    "billing_details": {
+        "item_1": {
+            "description":"Full-time rate for Red button pushing",
+            "hours": 999,
+            "rate": 0.99,
+            "amount": 989.01
+        },
+        "item_2": {
+            "description":"Full-time rate for Blue button pushing",
+            "hours": 999,
+            "rate": 1.99,
+            "amount": 1988.01
+        }
+    },
+
+    "individual_items": {
+        "item_1": {
+            "qty": 3,
+            "description": "Yellow anti-radiation suit",
+            "unit_price": 3.99,
+            "net_price": 11.97
+        },
+        "item_2": {
+            "qty": 2,
+            "description": "Gas mask",
+            "unit_price": 3.99,
+            "net_price": 11.97
+        },
+        "item_3": {
+            "qty": 3,
+            "description": "Gas mask",
+            "unit_price": 3.99,
+            "net_price": 11.97
+        },
+        "item_4": {
+            "qty": 4,
+            "description": "Gas mask",
+            "unit_price": 3.99,
+            "net_price": 11.97
+        },
+        "item_5": {
+            "qty": 5,
+            "description": "Gas mask",
+            "unit_price": 3.99,
+            "net_price": 11.97
+        },
+        "item_6": {
+            "qty": 6,
+            "description": "Gas mask",
+            "unit_price": 3.99,
+            "net_price": 11.97
+        },
+        "item_7": {
+            "qty": 7,
+            "description": "Gas mask",
+            "unit_price": 3.99,
+            "net_price": 11.97
+        },
+        "item_8": {
+            "qty": 8,
+            "description": "Gas mask",
+            "unit_price": 3.99,
+            "net_price": 11.97
+        },
+        "item_9": {
+            "qty": 9,
+            "description": "Gas mask",
+            "unit_price": 3.99,
+            "net_price": 11.97
+        }
+    }     
+}

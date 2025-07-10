@@ -1,0 +1,98 @@
+/* ================================
+   General table container
+================================= */
+#rate_hour, #item_desc {
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    padding-top: 0px !important;
+    padding: 10px;
+    border-collapse: collapse;
+    box-sizing: border-box;
+    page-break-inside: avoid;
+}
+
+/* ================================
+   Tables inside the box
+================================= */
+#rate_hour table, #item_desc table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 8pt;
+    font-family: 'Helvetica', sans-serif;
+    color: #000;
+}
+
+/* ================================
+   Table header
+================================= */
+#rate_hour th, #item_desc th {
+    font-family: 'Optima', sans-serif;
+    font-style: italic;
+    font-weight:lighter;
+    font-size: 10pt;
+    text-transform: uppercase;
+    text-align: left;
+    padding: 6px;
+    border: none;
+    color: #3DB5E6;
+    /* border: 1px solid #3DB5E6; */
+    /* background-color: #E6F4FA; */
+}
+
+/* ================================
+   Table body rows
+================================= */
+#rate_hour td, #item_desc td {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 8pt;
+    padding: 6px;
+    border: 1px solid #3DB5E6;
+}
+
+/* Alternating row background */
+#rate_hour tr:nth-child(even):not(#totals) td,
+#item_desc tr:nth-child(even):not(#totals) td {
+    background-color: #F9FBFD;
+}
+
+
+.qty, .unitp, .netp, .hours, .rate, .amt{
+    text-align: center !important;
+}
+
+/* #id_head th.desc */
+
+/* First column (description, item) always left-aligned */
+#rate_hour td:first-child , #item_desc td:first-child {
+    text-align: left;
+}
+
+/* ================================
+   Totals row
+================================= */
+
+#totals td {
+    /* background-color: none !important; */
+    border:none;
+    border-top: 2px solid #3DB5E6;
+    font-weight: bold;
+}
+
+/* Label (Total) */
+#totals td:nth-last-child(2) {
+    font-family: 'Optima', sans-serif;
+    font-size: 12pt;
+    color: #002060;
+    text-align: right !important;
+}
+
+/* Value (amount) */
+#totals td:last-child {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 8pt;
+    font-weight: bold;
+    color: #000000;
+    text-align: right;
+}

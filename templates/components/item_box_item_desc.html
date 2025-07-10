@@ -1,0 +1,24 @@
+<div id="item_desc">
+    <table>
+        <tr id="id_head">
+            <th class="qty">Qty</th>
+            <th class="desc">Description</th>
+            <th class="unitp">Unit Price</th>
+            <th class="netp">Net Price</th>
+        </tr>
+        {% for item in items %}
+        <tr>
+            <td class="qty">{{ item.qty }}</td>
+            <td class="desc">{{ item.description }}</td>
+            <td class="unitp">${{ "%.2f"|format(item.unit_price) }}</td>
+            <td class="netp">${{ "%.2f"|format(item.net_price) }}</td>
+        </tr>
+        {% endfor %}
+        <tr id="totals">
+            <td></td>
+            <td></td>
+            <td class="unitp"><strong>Total</strong></td>
+            <td class="netp">${{ "%.2f"|format(items | sum(attribute='net_price')) }}</td>
+        </tr>
+    </table>
+</div>

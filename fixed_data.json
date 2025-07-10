@@ -1,0 +1,31 @@
+{
+    "client": {
+        "company_name": "Nuclear Power Plant",
+        "name":"Charles Montgomery Burns",
+        "email": "cm_montgomery@npp.sp",
+        "street": "100 Industrial Way",
+        "city": "Springfield ",
+        "state": "Henderson",
+        "country": "Nevada",
+        "post_code": "12345",
+        "inv_reason": "Consultation Services"
+    },
+    "provider": {
+        "name": "Homer J Simpson",
+        "email":"homer_simpson@springfield.com",
+        "business_email" : "hj_simpson@npp.sp",
+        "street": "Evergreen Terrace 742",
+        "city": "Springfield",
+        "state":"Henderson",
+        "country": "Nevada",
+        "post_code": "12345",
+        "vat_tax_number": "XXXX0123456789"
+    },
+    "provider_bank_details": {
+        "account_number": "12345678900987654321",
+        "ABA_routing_number": "9876543210",
+        "account_name" : "Homer Jay Simpson",
+        "bank_name": "First Bank of Springfield",
+        "bank_address" : "1801 Main St. Comercial District, Springfield City, Nv 12345"
+    }  
+}

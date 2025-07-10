@@ -1,0 +1,24 @@
+<div id="rate_hour">
+    <table>
+        <tr id="rh_head">
+            <th class="desc">Description</th>
+            <th class="hours">Hours</th>
+            <th class="rate">Rate</th>
+            <th class="amt">Amount</th>
+        </tr>
+        {% for item in items %}
+        <tr>
+            <td class="desc">{{ item.description }}</td>
+            <td class="hours">{{ item.hours }}</td>
+            <td class="rate">${{ "%.2f"|format(item.rate) }}</td>
+            <td class="amt">${{ "%.2f"|format(item.amount) }}</td>
+        </tr>
+        {% endfor %}
+        <tr id="totals">
+            <td colspan="3" style="text-align: right;"><strong>Total</strong></td>
+            <td>
+                ${{ "%.2f"|format(items | sum(attribute='amount')) }}
+            </td>
+        </tr>
+    </table>
+</div>

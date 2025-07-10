@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Invoice_Advance</title>
+  <link rel="stylesheet" href="static/template_styles.css" />
+  <link rel="stylesheet" href="static/item_box_styles.css" />
+  <style>
+    .page-break {
+      page-break-before: always;
+    }
+
+    .second-item-box {
+      margin-top: 80vh;
+    }
+  </style>
+</head>
+<body>
+  <div id="main_container">
+    <!-- Header -->
+    <table class="header-table">
+      <tr>
+        <td style="width: 50%; vertical-align: top;">
+          <img src="logos/real_company_logo.png" alt="Logo" id="logo" />
+        </td>
+        <td style="width: 50%; text-align: right;">
+          <span class="invoice-title">INVOICE</span>
+        </td>
+      </tr>
+    </table>
+
+    <!-- Double column: Provider and Customer Information -->
+    <table class="double-column-table">
+      <tr>
+        <!-- Service Provider (left) -->
+        <td>
+          <h2 class="section-title">Service Provider</h2>
+          <table class="info-table">
+            <tr><td class="field">Name:</td><td class="value">{{ fixed_data.provider.name }}</td></tr>
+            <tr><td class="field">Email:</td><td class="value">{{ fixed_data.provider.email }}</td></tr>
+            <tr><td class="field">Business Email:</td><td class="value">{{ fixed_data.provider.business_email }}</td></tr>
+            <tr><td class="field">Street:</td><td class="value">{{ fixed_data.provider.street }}</td></tr>
+            <tr><td class="field">City:</td><td class="value">{{ fixed_data.provider.city }}</td></tr>
+            <tr><td class="field">State:</td><td class="value">{{ fixed_data.provider.state }}</td></tr>
+            <tr><td class="field">Country:</td><td class="value">{{ fixed_data.provider.country }}</td></tr>
+            <tr><td class="field">Post Code:</td><td class="value">{{ fixed_data.provider.post_code }}</td></tr>
+            <tr><td class="field">VAT Number:</td><td class="value">{{ fixed_data.provider.vat_tax_number }}</td></tr>
+          </table>
+        </td>
+        <!-- Customer Information (right) -->
+        <td>
+          <h2 class="section-title">Customer Information</h2>
+          <table class="info-table">
+            <tr><td class="field">Company:</td><td class="value">{{ fixed_data.client.company_name }}</td></tr>
+            <tr><td class="field">Name:</td><td class="value">{{ fixed_data.client.name }}</td></tr>
+            <tr><td class="field">Email:</td><td class="value">{{ fixed_data.client.email }}</td></tr>
+            <tr><td class="field">Street:</td><td class="value">{{ fixed_data.client.street }}</td></tr>
+            <tr><td class="field">City:</td><td class="value">{{ fixed_data.client.city }}</td></tr>
+            <tr><td class="field">State:</td><td class="value">{{ fixed_data.client.state }}</td></tr>
+            <tr><td class="field">Country:</td><td class="value">{{ fixed_data.client.country }}</td></tr>
+            <tr><td class="field">Post Code:</td><td class="value">{{ fixed_data.client.post_code }}</td></tr>
+            <tr><td class="field">Service:</td><td class="value">{{ fixed_data.client.inv_reason }}</td></tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+
+    <!-- Bank Details -->
+    <div class="fullwidth-section">
+      <h2>Bank Details</h2>
+      <table class="info-table">
+        <tr><td class="field">Bank Name:</td><td class="value">{{ fixed_data.provider_bank_details.bank_name }}</td></tr>
+        <tr><td class="field">Account Name:</td><td class="value">{{ fixed_data.provider_bank_details.account_name }}</td></tr>
+        <tr><td class="field">Account Number:</td><td class="value">{{ fixed_data.provider_bank_details.account_number }}</td></tr>
+        <tr><td class="field">ABA Routing:</td><td class="value">{{ fixed_data.provider_bank_details.ABA_routing_number }}</td></tr>
+        <tr><td class="field">Bank Address:</td><td class="value">{{ fixed_data.provider_bank_details.bank_address }}</td></tr>
+      </table>
+    </div>
+    <!-- Invoice Info -->
+    <table class="double-column-table">
+      <tr>
+        <td></td>
+        <td>
+          <table class="invoice-info-table">
+            <tr><td class="field">Invoice:</td><td class="value">{{ invoice_data.invoice_details.invoice_number }}</td></tr>
+            <tr><td class="field">Date:</td><td class="value">{{ invoice_data.invoice_details.date }}</td></tr>
+            <tr><td class="field">Billing Month:</td><td class="value">{{ invoice_data.invoice_details.invoice_month }}</td></tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+
+    <!-- Item box: first page (up to 7) -->    
+    {% set first_items = items[:7] %}
+    {% set remaining_items = items[7:] %}
+
+    {% set _ = namespace(value=first_items) %}
+    {% set items = _.value %}
+    <div id="item_box">
+      {% if layout == "fare_rate" %}
+        {% include "components/item_box_rate.html" %}
+      {% elif layout == "item_desc" %}
+        {% include "components/item_box_item_desc.html" %}
+      {% endif %}
+    </div>    
+    <!-- Second page with overflow items -->
+    
+    {% if remaining_items %}
+      <div class="page-break"></div>
+      <div id="main_container">
+        {% set _ = namespace(value=remaining_items) %}
+        {% set items = _.value %}
+        <div class="second-item-box">
+          {% if layout == "fare_rate" %}
+            {% include "components/item_box_rate.html" %}
+          {% elif layout == "item_desc" %}
+            {% include "components/item_box_item_desc.html" %}
+          {% endif %}
+        </div>
+    
+        <!-- Goodbye message -->
+        <div id="gb_msg">
+          <p>Thank you for your business!</p>
+        </div>
+      </div>
+    {% endif %}    
+</body>
+</html>
