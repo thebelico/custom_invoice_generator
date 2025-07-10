@@ -35,3 +35,25 @@ It's that easy!
 ### Repository Structure
 
 Understanding the repository structure
+
+```bash
+.
+├── fixed_data.json
+├── invoice_data.json
+├── LICENSE
+├── README.md
+├── requirements.txt
+├── invoice_generator.py
+└── templates
+    ├── advance_template.html
+    ├── basic_template.html
+    ├── components
+    │   ├── item_box_item_desc.html
+    │   └── item_box_rate.html
+    ├── fonts/...
+    │   └── Source/...
+    ├── logos/...
+    └── static
+        ├── item_box_styles.css
+        └── template_styles.css
+```
