@@ -28,7 +28,7 @@ pip install -r requirements.txt
 
 Run the script to generate the PDF
 ```bash
-python3 code
+python3 invoice_generator.py
 ```
 It's that easy!
 
